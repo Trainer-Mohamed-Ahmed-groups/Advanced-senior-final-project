@@ -1,9 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .senior-btn {
-        @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+@layer base {
+    body {
+        height: 5000px;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    .test {
+        direction: rtl;
+    }
+
+    .custom_input {
+        @apply tw-border-2 tw-m-2 tw-rounded-sm tw-border-secondary tw-w-full tw-shadow-md tw-outline-none tw-p-1 tw-text-center
+    }
+
+    .notification_icon {
+        @apply tw-bg-primary tw-rounded-full tw-h-4 tw-w-4 tw-inline-block tw-text-white tw-leading-4 tw-text-center tw-absolute tw-inset-x-7 tw-inset-3 tw-text-xs
     }
 }

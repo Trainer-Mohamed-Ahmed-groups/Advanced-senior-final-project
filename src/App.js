@@ -4,24 +4,25 @@ import Home from "./views/Home"
 import About from "./views/About"
 import Contacts from "./views/Contacts";
 import Error from "./views/Error";
-import Blog from "./views/Blog";
 import Cart from "./views/Cart";
-import Checkout from "./views/Checkout";
 import Footer from "./layout/Footer";
-import CategoryView from "./views/CategoryView";
+import { useTranslation } from "react-i18next";
+import Products from "./views/Products";
+import SiteHeader from "./layout/SiteHeader";
 function App() {
+  const { i18n } = useTranslation();
+
   return (
-    <div className="App">
+    <div className={`tw-font-cairo ${i18n.language === "ar" ? 'test' : ""}`}>
       <SiteNav />
+      <SiteHeader />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contacts />} />
-        <Route path="/blog" element={<Blog />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/category/:category" element={<CategoryView />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />

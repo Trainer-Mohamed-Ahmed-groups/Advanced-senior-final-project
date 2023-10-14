@@ -8,7 +8,8 @@ import { initReactI18next } from "react-i18next";
 import translateEn from "./locale/en.json";
 import translateAr from "./locale/ar.json";
 import { Provider } from 'react-redux';
-import store from "./redux/store"
+import store from "./redux/store";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const resources = {
   en: {
@@ -22,7 +23,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "en",
+    lng: localStorage.getItem("siteLanguage"),
+    fallbackLng : "en",
     interpolation: {
       escapeValue: false
     }

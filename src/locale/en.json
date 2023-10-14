@@ -2,5 +2,7 @@
     "home": "Home",
     "about":"About",
     "blog":"Blog",
-    "contact_us":"Contact us"
+    "contact_us":"Contact us",
+    "help":"Need a help",
+    "products":"Products"
 }

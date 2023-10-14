@@ -1,46 +1,51 @@
 import { NavLink } from "react-router-dom";
 import i18next from "i18next";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLanguage } from '@fortawesome/free-solid-svg-icons'
-
+import { Container, Navbar } from 'react-bootstrap';
+import logo from "../asstes/images/logo.png"
 export default function SiteNav() {
 
     const { t } = useTranslation()
 
-    let [currentLang, setCurrentLang] = useState(i18next.language)
 
     let handleLang = () => {
-        if (i18next.language === "en") {
-            i18next.changeLanguage("ar")
-            setCurrentLang("ar")
-        }
-        else {
-            i18next.changeLanguage("en")
-            setCurrentLang("en")
-        }
+        i18next.language === "en" ? i18next.changeLanguage("ar") : i18next.changeLanguage("en")
+        localStorage.setItem("siteLanguage", i18next.language)
     }
 
     return (
-        <nav>
-            <ul>
-                <li>
-                    <NavLink to="/">{t('home')}</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/about">{t('about')}</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/blog">{t('blog')}</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/contact">{t('contact_us')}</NavLink>
-                </li>
-                <li>
-                    <FontAwesomeIcon className="fa-2x" icon={faLanguage} onClick={handleLang} />
-                </li>
-            </ul>
-        </nav>
+        <Navbar expand="lg" className="tw-bg-primary">
+            <Container>
+                <img src={logo} alt="Site logo" width="100" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" className="tw-bg-white" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <ul className="mx-auto tw-flex tw-items-center tw-justify-between tw-w-1/2">
+                        <li>
+                            <NavLink className="nav-link tw-text-white" to="/">{t('home')}</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="nav-link tw-text-white" to="/about">{t('about')}</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="nav-link tw-text-white" to="/products">{t('products')}</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="nav-link tw-text-white" to="/contact">{t('contact_us')}</NavLink>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon className="fa-2x tw-text-white" icon={faLanguage} onClick={handleLang} />
+                        </li>
+                    </ul>
+                    <h6>
+                        <a className="nav-link tw-text-white" href="tel:123456789">
+                            <h5>{t('help')}</h5>
+                            <span>123456789</span>
+                        </a>
+                    </h6>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }

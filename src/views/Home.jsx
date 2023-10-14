@@ -1,37 +1,42 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import ProductsCarousel from "../components/home/ProductsCarousel";
+import { Spinner } from 'react-bootstrap';
+import CategoriesContainer from "../components/home/CategoriesContainer";
+
 export default function Home() {
 
-    const [categories, setCategories] = useState([]);
 
-    let getCategories = () => {
-        fetch("https://dummyjson.com/products/categories")
-            .then(json => json.json())
-            .then(res => setCategories(res))
+    const [homePageData, setHomePageData] = useState([])
+
+    let getData = () => {
+        fetch("http://react-ecommerce.activegroup-eg.com/api/home")
+            .then(data => data.json())
+            .then(res => setHomePageData(res.data))
     }
 
     useEffect(() => {
-        getCategories()
+        getData()
     }, [])
 
-    const { t } = useTranslation()
+    useEffect(() => {
+    }, [])
+
+    const { i18n } = useTranslation()
     return (
-        <div>
-            <h1 className="text-center">{t('home')}</h1>
-            <ul>
-                {
-                    categories.length > 0
-                        ?
-                        categories.map((category, index) =>
-                            <li key={index}>
-                                <Link to={`/category/${category}`}>{category}</Link>
-                            </li>
-                        )
-                        :
-                        <div className="lds-dual-ring"></div>
-                }
-            </ul>
-        </div>
+        <>
+            {
+                Object.keys(homePageData).length > 0
+                    ?
+                    <>
+                        <ProductsCarousel sliderData={homePageData.home_slider} i18n={i18n} />
+                        <CategoriesContainer categoriesData={homePageData.categories} i18n={i18n} />
+                    </>
+                    :
+                    <div className="tw-min-h-screen tw-flex tw-justify-center tw-items-center">
+                        <Spinner animation="grow" />
+                    </div>
+            }
+        </>
     )
 }
