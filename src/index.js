@@ -10,6 +10,7 @@ import translateAr from "./locale/ar.json";
 import { Provider } from 'react-redux';
 import store from "./redux/store";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchProvider from './context/SearchContext';
 
 const resources = {
   en: {
@@ -24,7 +25,7 @@ i18n
   .init({
     resources,
     lng: localStorage.getItem("siteLanguage"),
-    fallbackLng : "en",
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false
     }
@@ -34,7 +35,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <SearchProvider>
+          <App />
+        </SearchProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

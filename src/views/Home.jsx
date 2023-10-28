@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import ProductsCarousel from "../components/home/ProductsCarousel";
 import { Spinner } from 'react-bootstrap';
 import CategoriesContainer from "../components/home/CategoriesContainer";
+import Offers from "../components/home/Offers";
 
 export default function Home() {
 
@@ -19,8 +20,6 @@ export default function Home() {
         getData()
     }, [])
 
-    useEffect(() => {
-    }, [])
 
     const { i18n } = useTranslation()
     return (
@@ -31,6 +30,7 @@ export default function Home() {
                     <>
                         <ProductsCarousel sliderData={homePageData.home_slider} i18n={i18n} />
                         <CategoriesContainer categoriesData={homePageData.categories} i18n={i18n} />
+                        <Offers offersData={homePageData.offers}/>
                     </>
                     :
                     <div className="tw-min-h-screen tw-flex tw-justify-center tw-items-center">

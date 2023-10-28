@@ -10,8 +10,10 @@ module.exports = {
       white: "#FFF",
       secondary: "#4e4e45",
       gray: {
+        "400": "#b9b9b9",
         "600": "#424447"
-      }
+      },
+      gold:"#FFD700"
     },
     fontFamily: {
       cairo: ['Cairo', 'sans-serif']

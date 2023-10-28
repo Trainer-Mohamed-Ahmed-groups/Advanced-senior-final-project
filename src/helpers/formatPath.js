@@ -1,0 +1,1 @@
+export const formatPath = link => link.toLowerCase().split(" ").join("-")

@@ -4,10 +4,6 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        height: 5000px;
-    }
-
     a {
         text-decoration: none !important;
     }
@@ -22,5 +18,9 @@
 
     .notification_icon {
         @apply tw-bg-primary tw-rounded-full tw-h-4 tw-w-4 tw-inline-block tw-text-white tw-leading-4 tw-text-center tw-absolute tw-inset-x-7 tw-inset-3 tw-text-xs
+    }
+
+    .price::after {
+        content: '$'
     }
 }
