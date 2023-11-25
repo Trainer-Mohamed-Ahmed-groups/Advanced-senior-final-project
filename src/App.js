@@ -12,6 +12,8 @@ import ProductsServer from "./views/ProductsServer";
 import SiteHeader from "./layout/SiteHeader";
 import Categories from "./views/Categories";
 import ProductDetails from "./views/ProductDetails";
+import Login from "./views/Login";
+import RequireAuth from "./context/auth/RequireAuth";
 function App() {
   const { i18n } = useTranslation();
 
@@ -24,11 +26,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contacts />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<RequireAuth><Cart /></RequireAuth>} />
         {/* <Route path="/products" element={<Products />} /> */}
         <Route path="/products" element={<ProductsServer />} />
         <Route path="/categories/:cat" element={<Categories />} />
         <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />

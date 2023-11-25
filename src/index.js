@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import store from "./redux/store";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchProvider from './context/SearchContext';
+import AuthProvider from './context/auth/Auth';
 
 const resources = {
   en: {
@@ -35,9 +36,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <SearchProvider>
-          <App />
-        </SearchProvider>
+        <AuthProvider>
+          <SearchProvider>
+            <App />
+          </SearchProvider>
+        </AuthProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
