@@ -1,10 +1,15 @@
 {
     "home": "Home",
-    "about":"About",
-    "blog":"Blog",
-    "contact_us":"Contact us",
-    "help":"Need a help",
-    "products":"Products",
-    "categories":"Categories",
-    "offers":"Offers"
+    "about": "About",
+    "blog": "Blog",
+    "contact_us": "Contact us",
+    "help": "Need a help",
+    "products": "Products",
+    "categories": "Categories",
+    "offers": "Offers",
+    "new_client": "New client",
+    "already_client": "Already client",
+    "sign_up_title": "User is already login",
+    "email_placeholder": "Enter your email ",
+    "password_placeholder": "Enter your password "
 }

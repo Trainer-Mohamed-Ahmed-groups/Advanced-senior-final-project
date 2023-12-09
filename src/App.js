@@ -14,6 +14,7 @@ import Categories from "./views/Categories";
 import ProductDetails from "./views/ProductDetails";
 import Login from "./views/Login";
 import RequireAuth from "./context/auth/RequireAuth";
+import Toolkit from "./components/Toolkit";
 function App() {
   const { i18n } = useTranslation();
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/categories/:cat" element={<Categories />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/toolkit" element={<Toolkit />} />
         <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />

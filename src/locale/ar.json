@@ -1,10 +1,15 @@
 {
-    "home":"الرئيسية",
-    "about":"عنا",
-    "blog":"المدونة",
-    "contact_us":"تواصل معنا",
-    "help":"أتريد المساعدة",
-    "products":"المنتجات",
-    "categories" :"التصنيفات",
-    "offers":"العروض"
+    "home": "الرئيسية",
+    "about": "عنا",
+    "blog": "المدونة",
+    "contact_us": "تواصل معنا",
+    "help": "أتريد المساعدة",
+    "products": "المنتجات",
+    "categories": "التصنيفات",
+    "offers": "العروض",
+    "new_client": "عميل جديد",
+    "already_client": "مسجل بالفعل",
+    "sign_up_title": "المستخدم موجود بالفعل",
+    "email_placeholder":"ادخل البريد الالكترونى",
+    "password_placeholder":"ادخل الرقم السرى"
 }
