@@ -42,7 +42,6 @@ export default function SiteHeader() {
                             <Link to="/login" className='tw-text-gray-600 tw-text-lg'>
                                 <FontAwesomeIcon icon={faRightToBracket} className='tw-ms-4' />
                             </Link>
-
                     }
                 </>
 

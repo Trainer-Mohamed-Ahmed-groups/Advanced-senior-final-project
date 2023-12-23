@@ -20,7 +20,6 @@ export default function Home() {
         getData()
     }, [])
 
-
     const { i18n } = useTranslation()
     return (
         <>

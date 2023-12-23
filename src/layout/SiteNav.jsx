@@ -38,6 +38,9 @@ export default function SiteNav() {
                             <NavLink className="nav-link tw-text-white" to="/toolkit">Toolkit</NavLink>
                         </li>
                         <li>
+                            <NavLink className="nav-link tw-text-white" to="/users">Users</NavLink>
+                        </li>
+                        <li>
                             <FontAwesomeIcon className="fa-2x tw-text-white" icon={faLanguage} onClick={handleLang} />
                         </li>
                     </ul>

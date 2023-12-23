@@ -8,8 +8,8 @@ import { initReactI18next } from "react-i18next";
 import translateEn from "./locale/en.json";
 import translateAr from "./locale/ar.json";
 import { Provider } from 'react-redux';
-// import store from "./redux/store";
-import store from "./redux_toolkit/app/store";
+import store from "./redux/store";
+// import store from "./redux_toolkit/app/store";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchProvider from './context/SearchContext';
 import AuthProvider from './context/auth/Auth';
@@ -36,14 +36,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <AuthProvider>
+      <AuthProvider>
+        <Provider store={store}>
           <SearchProvider>
             <App />
           </SearchProvider>
-        </AuthProvider>
-      </Provider>
+        </Provider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
-

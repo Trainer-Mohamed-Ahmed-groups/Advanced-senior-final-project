@@ -17,7 +17,7 @@ module.exports = {
       gold: "#FFD700"
     },
     fontFamily: {
-      cairo: ['Cairo', 'sans-serif']
+      // cairo: ['Cairo', 'sans-serif']
     }
   }
 }
